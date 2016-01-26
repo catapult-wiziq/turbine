@@ -1,0 +1,24 @@
+server:
+  port: 8005
+
+turbine:
+  stream:
+    port: 8006
+
+spring:
+  application:
+    name: turbine
+---
+spring:
+  profiles: dev   
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8002/eureka/
+---
+spring:
+  profiles: test   
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.17.175:8002/eureka/
